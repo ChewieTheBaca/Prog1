@@ -9,3 +9,14 @@
 /home/niko/Studium/Prog1/Uebung3/bin/Debug/netcoreapp2.2/Uebung3.pdb
 /home/niko/Studium/Prog1/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.dll
 /home/niko/Studium/Prog1/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.pdb
+/home/niko/Projects/Uebung3/bin/Debug/netcoreapp2.2/Uebung3.deps.json
+/home/niko/Projects/Uebung3/bin/Debug/netcoreapp2.2/Uebung3.runtimeconfig.json
+/home/niko/Projects/Uebung3/bin/Debug/netcoreapp2.2/Uebung3.runtimeconfig.dev.json
+/home/niko/Projects/Uebung3/bin/Debug/netcoreapp2.2/Uebung3.dll
+/home/niko/Projects/Uebung3/bin/Debug/netcoreapp2.2/Uebung3.pdb
+/home/niko/Projects/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.csprojAssemblyReference.cache
+/home/niko/Projects/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.csproj.CoreCompileInputs.cache
+/home/niko/Projects/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.AssemblyInfoInputs.cache
+/home/niko/Projects/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.AssemblyInfo.cs
+/home/niko/Projects/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.dll
+/home/niko/Projects/Uebung3/obj/Debug/netcoreapp2.2/Uebung3.pdb

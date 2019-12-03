@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/niko/Studium/Prog1/Uebung3/Uebung3.csproj",
+      "projectUniqueName": "/home/niko/Projects/Uebung3/Uebung3.csproj",
       "projectName": "Uebung3",
-      "projectPath": "/home/niko/Studium/Prog1/Uebung3/Uebung3.csproj",
+      "projectPath": "/home/niko/Projects/Uebung3/Uebung3.csproj",
       "packagesPath": "/home/niko/.nuget/packages/",
-      "outputPath": "/home/niko/Studium/Prog1/Uebung3/obj/",
+      "outputPath": "/home/niko/Projects/Uebung3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/niko/.nuget/NuGet/NuGet.Config"

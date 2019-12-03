@@ -6,6 +6,7 @@ namespace Uebung3
     {
         static void Main(string[] args)
         {
+            /*
             //Konvertierung Dezimal zu Binaer
 
             Console.WriteLine("Bitte eine Zahl eingeben! ");
@@ -78,6 +79,102 @@ namespace Uebung3
                         break;
                 }
             }
+            */
+
+            //
+            //Aufgabe 2
+            //
+            //Algorithmus, der nach der Anzahl zu rollender Wuerfel fragt
+            //und dann fragt, wie oft gewürfelt werden soll
+            //
+            /*
+            System.Console.WriteLine("Anzahl Wuerfel eingeben: ");
+            int numCubes = int.Parse(Console.ReadLine());
+            System.Console.WriteLine("Anzahl Versuche eingeben: ");
+            int numTries = int.Parse(Console.ReadLine());
+
+            int[] cubes = new int[numCubes];
+
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
+            int num5 = 0;
+            int num6 = 0;
+
+            for (int i = 0; i < numTries; i++)
+            {
+                for (int k = 0; k < numCubes; k++)
+                {
+                    Random rnd = new Random();
+                    cubes[k] = rnd.Next(1, 7);
+                    if (cubes[k] == 1) num1 += 1;
+                    if (cubes[k] == 2) num2 += 1;
+                    if (cubes[k] == 3) num3 += 1;
+                    if (cubes[k] == 4) num4 += 1;
+                    if (cubes[k] == 5) num5 += 1;
+                    if (cubes[k] == 6) num6 += 1;
+
+                }
+            }
+            System.Console.WriteLine("Augenzahl:               Anzahl:");
+            System.Console.WriteLine("eins:                     " + num1);
+            System.Console.WriteLine("zwei:                     " + num2);
+            System.Console.WriteLine("drei:                     " + num3);
+            System.Console.WriteLine("vier:                     " + num4);
+            System.Console.WriteLine("fuenf:                    " + num5);
+            System.Console.WriteLine("sechs:                    " + num6);
+            */
+
+            //
+            // Aufgabe 3
+            //
+            // Schreiben Sie ein C#-Programm, 
+            // welches nacheinander die Anzahl der Primzahlen 
+            // in den Intervallen [0, 1000], [1000, 2000], [2000, 3000], [3000, 4000], ... 
+            // [29000, 30000] berechnet
+            //
+
+            // Intervall [0,1000]
+
+            int anzahlPrim = 0;
+            bool istPrim = true;
+
+            int untereGrenze = 0;
+            int obereGrenze = 1000;
+
+            for (int i = untereGrenze; i <= obereGrenze; i++)
+            {
+                // prueft ob Primzahl ist    
+                for (int k = 0; k < i; k++)
+                {
+                    if (k > 1 && ((i / k != 1) & (i % k == 0)))
+                    {
+                        istPrim = false;
+                        break;
+                    }
+                }
+                if (i > 1 && istPrim == true)
+                {
+                    anzahlPrim += 1;
+                }
+                istPrim = true;
+
+
+
+                // Intervallverschiebung
+                if (i == obereGrenze & i <= 30000)
+                {
+                    System.Console.WriteLine("Anzahl der Primzahlen im Intervall "
+                    + untereGrenze + " - " + obereGrenze + " : " + anzahlPrim);
+                    obereGrenze += 1000;
+                    untereGrenze += 1000;
+                    anzahlPrim = 0;
+                }
+            }
         }
+
+
     }
+
 }
