@@ -1,0 +1,11 @@
+/home/niko/Studium/Prog1/Uebung2/obj/Debug/netcoreapp2.2/Uebung2.csprojAssemblyReference.cache
+/home/niko/Studium/Prog1/Uebung2/obj/Debug/netcoreapp2.2/Uebung2.csproj.CoreCompileInputs.cache
+/home/niko/Studium/Prog1/Uebung2/obj/Debug/netcoreapp2.2/Uebung2.AssemblyInfoInputs.cache
+/home/niko/Studium/Prog1/Uebung2/obj/Debug/netcoreapp2.2/Uebung2.AssemblyInfo.cs
+/home/niko/Studium/Prog1/Uebung2/bin/Debug/netcoreapp2.2/Uebung2.deps.json
+/home/niko/Studium/Prog1/Uebung2/bin/Debug/netcoreapp2.2/Uebung2.runtimeconfig.json
+/home/niko/Studium/Prog1/Uebung2/bin/Debug/netcoreapp2.2/Uebung2.runtimeconfig.dev.json
+/home/niko/Studium/Prog1/Uebung2/bin/Debug/netcoreapp2.2/Uebung2.dll
+/home/niko/Studium/Prog1/Uebung2/bin/Debug/netcoreapp2.2/Uebung2.pdb
+/home/niko/Studium/Prog1/Uebung2/obj/Debug/netcoreapp2.2/Uebung2.dll
+/home/niko/Studium/Prog1/Uebung2/obj/Debug/netcoreapp2.2/Uebung2.pdb
