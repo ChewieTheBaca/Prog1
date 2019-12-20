@@ -11,106 +11,166 @@ namespace Uebung4
             //  string two = "";
             //  binaryAdd(one, two);
             Program prgm = new Program();
-            prgm.parseBinaryAndDecimal("");
+            //prgm.parseBinaryAndDecimal("");
+
+            //System.Console.WriteLine("Bitte Binaerzahlen fuer Mult eingeben: ");
+            //prgm.binaryMult(Console.ReadLine(), Console.ReadLine());
+            prgm.createMartix(4, 4);
         }
 
 
         //Aufgabe 1
 
-        /*         static void binaryAdd(string first, string second)
+        string binaryAdd(string first, string second)
+        {
+
+
+            int sumLength = 0;
+            if (first.Length - second.Length > 0) sumLength = first.Length;
+            else sumLength = second.Length;
+
+            int sum = 0;
+            int overflow = 0;
+            int lastOverflow = 0;
+            int num1, num2 = 0;
+
+            string result = "";
+            string line = new String('-', sumLength + 2);
+            string overflowPos = "";
+
+            //schriftliche Addition
+            for (int i = 0; i <= (sumLength += overflow); i++)
+            {
+                if (i < first.Length) num1 = int.Parse(first[first.Length - 1 - i].ToString());
+                else num1 = 0;
+                if (i < second.Length) num2 = int.Parse(second[second.Length - 1 - i].ToString());
+                else num2 = 0;
+
+                sum = num1 + num2 + lastOverflow;
+                if (sum > 1)
                 {
+                    overflow = 1;
+                    sum = 0;
+                }
 
-                    System.Console.WriteLine("Zahl eins fuer Binaeradd eingeben: ");
-                    first = Console.ReadLine();
-                    System.Console.WriteLine("Zahl zwei fuer Binaeradd eingeben");
-                    second = Console.ReadLine();
-                    int sumLength = 0;
-                    if (first.Length - second.Length > 0) sumLength = first.Length;
-                    else sumLength = second.Length;
+                if (i == sumLength & lastOverflow == 1)
+                {
+                    result = lastOverflow + result;
+                    //drawBinaryAdd();
+                    break;
+                }
+                else
+                {
+                    result = sum + result;
+                    //drawBinaryAdd();
+                    lastOverflow = overflow;
+                    overflow = 0;
+                }
 
-                    int sum = 0;
-                    int overflow = 0;
-                    int lastOverflow = 0;
-                    int num1, num2 = 0;
 
-                    string result = "";
-                    string line = new String('-', sumLength + 2);
-                    string overflowPos = "";
+                void drawBinaryAdd()
+                {
+                    if (overflow > 0) overflowPos = new String(' ', sumLength - i) + overflow;
+                    else overflowPos = new String(' ', sumLength - i);
 
-                    //schriftliche Addition
-                    for (int i = 0; i <= (sumLength += overflow); i++)
+                    if (first.Length == sumLength)
                     {
-                        if (i < first.Length) num1 = int.Parse(first[first.Length - 1 - i].ToString());
-                        else num1 = 0;
-                        if (i < second.Length) num2 = int.Parse(second[second.Length - 1 - i].ToString());
-                        else num2 = 0;
-
-                        sum = num1 + num2 + lastOverflow;
-                        if (sum > 1)
-                        {
-                            overflow = 1;
-                            sum = 0;
-                        }
-
-                        if (i == sumLength & lastOverflow == 1)
-                        {
-                            result = lastOverflow + result;
-                            drawBinaryAdd();
-                            break;
-                        }
-                        else
-                        {
-                            result = sum + result;
-                            drawBinaryAdd();
-                            lastOverflow = overflow;
-                            overflow = 0;
-                        }
-
-                        void drawBinaryAdd()
-                        {
-                            if (overflow > 0) overflowPos = new String(' ', sumLength - i) + overflow;
-                            else overflowPos = new String(' ', sumLength - i);
-
-                            if (first.Length == sumLength)
-                            {
-                                System.Console.WriteLine("  " + first);
-                                System.Console.WriteLine("+" + new String(' ', sumLength - second.Length + 1) + second);
-                                System.Console.WriteLine(overflowPos);
-                                System.Console.WriteLine(line);
-                                System.Console.WriteLine(new String(' ', sumLength - i + 1) + result);
-                                System.Console.WriteLine();
-                            }
-                            else
-                            {
-                                System.Console.WriteLine(new String(' ', sumLength - first.Length + 2) + first);
-                                System.Console.WriteLine("+ " + second);
-                                System.Console.WriteLine(overflowPos);
-                                System.Console.WriteLine(line);
-                                System.Console.WriteLine(new String(' ', sumLength - i + 1) + result);
-                                System.Console.WriteLine();
-                            }
-                        }
-
+                        System.Console.WriteLine("  " + first);
+                        System.Console.WriteLine("+" + new String(' ', sumLength - second.Length + 1) + second);
+                        System.Console.WriteLine(overflowPos);
+                        System.Console.WriteLine(line);
+                        System.Console.WriteLine(new String(' ', sumLength - i + 1) + result);
+                        System.Console.WriteLine();
                     }
-                } */
+                    else
+                    {
+                        System.Console.WriteLine(new String(' ', sumLength - first.Length + 2) + first);
+                        System.Console.WriteLine("+ " + second);
+                        System.Console.WriteLine(overflowPos);
+                        System.Console.WriteLine(line);
+                        System.Console.WriteLine(new String(' ', sumLength - i + 1) + result);
+                        System.Console.WriteLine();
+                    }
+                }
+
+            }
+            return result;
+
+        }
 
         //Aufgabe 2
         // Summe zweier Zahlen in Dezimal- und Binaersystem ausgeben
 
         string parseBinaryAndDecimal(string binary)
         {
-            System.Console.WriteLine("Bitte Binaerzahl eingeben");
-            binary = Console.ReadLine();
+
             double decNum = 0;
             for (int i = 0; i < binary.Length; i++)
             {
                 if (int.Parse(binary[binary.Length - i - 1].ToString()) == 1)
                 {
                     decNum += Math.Pow(2, i);
-                    System.Console.WriteLine(decNum);
                 }
             }
+            System.Console.WriteLine("Dezimalzahl: " + decNum);
+            System.Console.WriteLine("Binaerzahl: " + binary);
             return decNum.ToString();
+        }
+
+        //Aufgabe 3
+        // schriftliche Multiplikation
+
+        string binaryMult(string first, string second)
+        {
+            // generate Numbers for addition
+            int num1 = 0, num2 = 0, realProd = 0;
+            string[] product = new string[first.Length];
+
+            for (int i = 0; i < first.Length; i++)
+            {
+                for (int k = 0; k < second.Length; k++)
+                {
+                    num1 = int.Parse(first[first.Length - i - 1].ToString());
+                    num2 = int.Parse(second[second.Length - k - 1].ToString());
+                    realProd = num1 * num2;
+                    product[i] = realProd + product[i];
+                }
+            }
+            //fill up with 0 to match the number position
+            for (int i = product.Length - 1; i >= 0; i--)
+            {
+                product[i] = product[i] + new String('0', i);
+            }
+            //use binaryAdd for Addition
+            for (int i = 1; i < product.Length; i++)
+            {
+                product[0] = binaryAdd(product[0], product[i]);
+            }
+            //print result with parseBinaryAndDecimal()
+            parseBinaryAndDecimal(product[0]);
+
+            return product[0];
+        }
+
+        //Aufagbe 4
+
+        double[,] createMartix(int lines, int columns)
+        {
+            double[,] matrix = new double[lines, columns];
+
+            for (int i = 0; i < lines; i++)
+            {
+                for (int k = 0; k < columns; k++)
+                {
+                    matrix[i, k] = 0;
+                    System.Console.WriteLine("Matrixelemente: ({0},{1})" + matrix[i, k], i, k);
+                }
+            }
+            return matrix;
+        }
+
+        void fillRandom(ref double[,] matrix,int lowerRange = 10,int maxRange=10){
+
         }
     }
 }
