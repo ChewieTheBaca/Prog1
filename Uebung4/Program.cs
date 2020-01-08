@@ -15,7 +15,9 @@ namespace Uebung4
 
             //System.Console.WriteLine("Bitte Binaerzahlen fuer Mult eingeben: ");
             //prgm.binaryMult(Console.ReadLine(), Console.ReadLine());
-            prgm.createMartix(4, 4);
+            double[,] matrix = prgm.createMatrix(4, 4);
+            prgm.fillRandom(ref matrix);
+            prgm.printMatrix(matrix);
         }
 
 
@@ -154,7 +156,7 @@ namespace Uebung4
 
         //Aufagbe 4
 
-        double[,] createMartix(int lines, int columns)
+        double[,] createMatrix(int lines, int columns)
         {
             double[,] matrix = new double[lines, columns];
 
@@ -163,14 +165,43 @@ namespace Uebung4
                 for (int k = 0; k < columns; k++)
                 {
                     matrix[i, k] = 0;
-                    System.Console.WriteLine("Matrixelemente: ({0},{1})" + matrix[i, k], i, k);
                 }
             }
             return matrix;
         }
 
-        void fillRandom(ref double[,] matrix,int lowerRange = 10,int maxRange=10){
+        //Aufagbe 5        
+        void fillRandom(ref double[,] matrix, int lowerRange = -10, int maxRange = 10)
+        {
 
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int k = 0; k < matrix.GetLength(1); k++)
+                {
+                    Random rnd = new Random();
+                    matrix[i, k] = rnd.Next(lowerRange, maxRange + 1);
+                    System.Console.WriteLine("Matrix filled with rnd numbers: " + matrix[i, k]);
+                }
+            }
         }
+
+        //Aufgabe 6
+        void printMatrix(double[,] m)
+        {
+            string lines = "";
+            for (int i = 0; i < m.GetLength(0); i++)
+            {
+                for (int k = 0; k < m.GetLength(1); k++)
+                {
+                    lines += " " + m[i, k];
+                }
+                System.Console.WriteLine(lines);
+                lines = "";
+            }
+        }
+
+        //Aufgabe 7
+        //
     }
+
 }
