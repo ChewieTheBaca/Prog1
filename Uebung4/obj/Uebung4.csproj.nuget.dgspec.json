@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/niko/Projects/Uebung4/Uebung4.csproj": {}
+  },
+  "projects": {
+    "/home/niko/Projects/Uebung4/Uebung4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/niko/Projects/Uebung4/Uebung4.csproj",
+        "projectName": "Uebung4",
+        "projectPath": "/home/niko/Projects/Uebung4/Uebung4.csproj",
+        "packagesPath": "/home/niko/.nuget/packages/",
+        "outputPath": "/home/niko/Projects/Uebung4/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/niko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/opt/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

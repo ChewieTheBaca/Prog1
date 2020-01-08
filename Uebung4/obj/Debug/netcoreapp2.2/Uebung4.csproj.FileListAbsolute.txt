@@ -1,5 +1,4 @@
 /home/niko/Projects/Uebung4/obj/Debug/netcoreapp2.2/Uebung4.csprojAssemblyReference.cache
-/home/niko/Projects/Uebung4/obj/Debug/netcoreapp2.2/Uebung4.csproj.CoreCompileInputs.cache
 /home/niko/Projects/Uebung4/obj/Debug/netcoreapp2.2/Uebung4.AssemblyInfoInputs.cache
 /home/niko/Projects/Uebung4/obj/Debug/netcoreapp2.2/Uebung4.AssemblyInfo.cs
 /home/niko/Projects/Uebung4/bin/Debug/netcoreapp2.2/Uebung4.deps.json

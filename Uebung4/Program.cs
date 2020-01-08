@@ -18,6 +18,7 @@ namespace Uebung4
             double[,] matrix = prgm.createMatrix(4, 4);
             prgm.fillRandom(ref matrix);
             prgm.printMatrix(matrix);
+            prgm.IsQuadratical(matrix);
         }
 
 
@@ -201,7 +202,85 @@ namespace Uebung4
         }
 
         //Aufgabe 7
-        //
-    }
+        // Test ob Matrix quadratisch
 
+        bool IsQuadratical(double[,] m)
+        {
+            if (m.GetUpperBound(0) == m.GetUpperBound(1))
+            {
+                System.Console.WriteLine("Is quadratical");
+                return true;
+            }
+            else
+            {
+                System.Console.WriteLine("Is not quadratical");
+                return false;
+            }
+        }
+        //Aufgabe 7 optionaler Teil
+        double CalculateDet(double[,] m)
+        {
+            double det;
+            double[][,] subDetCollection = new double[m.GetUpperBound(0)][,];
+
+            if (IsQuadratical(m) == true)
+            {
+                //for 2x2 matrix det(a)= a*d - b*c
+                if (m.GetUpperBound(0) == 1)
+                {
+                    det = (m[0, 0] * m[1, 1]) - (m[0, 1] * m[1, 0]);
+                    return det;
+                }
+                else if (m.GetUpperBound(0) == 2)
+                {
+                    return Calcualte3x3Det(m);
+                }
+                //for any 2-dimensional matrix
+                else
+                {
+                    for (int i = 0; i < m.GetUpperBound(0); i++)
+                    {
+                        // create subdeterminants via TrimMatrix and save them in subDetcollection
+
+                        subDetCollection[i] = new double[m.GetUpperBound(0)] { TrimMatrix(0, i, m) };
+                    }
+                }
+                return 1;
+            }
+        }
+
+        //                    |a b c |
+        // for 3x3 matrix A=  |d e f | det(A)= a*e*i + b*f*g + c*d*h - g*e*c -h*f*a - i*d*b
+        //                    |g h i |
+        double Calcualte3x3Det(double[,] m)
+        {
+            double det;
+            det = (m[0, 0] * m[1, 1] * m[2, 2]) + (m[1, 0] * m[2, 1] * m[0, 2]) + (m[2, 0] * m[0, 0] * m[1, 2])
+                          - (m[0, 2] * m[1, 1] * m[2, 0]) - (m[1, 2] * m[2, 1] * m[0, 0]) - (m[2, 2] * m[0, 1] * m[1, 0]);
+            return det;
+        }
+
+        // removes a row and column from the passed matrix and creates a new one without those
+
+        double[,] TrimMatrix(int rowToRemove, int columnToRemove, double[,] m)
+        {
+            double[,] result = new double[m.GetLength(0) - 1, m.GetLength(1) - 1];
+
+            for (int i = 0, x = 0; i < m.GetLength(0); i++)
+            {
+                if (i == rowToRemove) continue;
+                for (int k = 0, y = 0; k < m.GetLength(1); k++)
+                {
+                    if (k == columnToRemove) continue;
+                    result[x, y] = m[i, k];
+                    y++;
+                }
+                x++;
+            }
+            return result;
+        }
+    }
 }
+
+
+
