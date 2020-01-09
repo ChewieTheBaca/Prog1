@@ -240,9 +240,9 @@ namespace Uebung4
                 {
                     for (int i = 0; i < m.GetUpperBound(0); i++)
                     {
-                        // create subdeterminants via TrimMatrix and save them in subDetcollection
+                        // create subdeterminants via TrimMatrix and save them in subDetCollection
 
-                        subDetCollection[i] = new double[m.GetUpperBound(0)] { TrimMatrix(0, i, m) };
+                        subDetCollection[i] = new double[,] { TrimMatrix(0, i, m) };
                     }
                 }
                 return 1;
@@ -278,6 +278,46 @@ namespace Uebung4
                 x++;
             }
             return result;
+        }
+        //Aufgabe 8
+        //matrixmultiplication
+        double[,] MultMatrix(double[,] m, double[,] n)
+        {
+            double[,] newMatrix = new double[m.GetUpperBound(0), n.GetUpperBound(1)];
+            if (m.GetUpperBound(0) == n.GetUpperBound(1))
+            {
+                for (int row = 0; row < m.GetUpperBound(0); row++)
+                {
+                    for (int column = 0, s = 0; column < n.GetUpperBound(1); column++)
+                    {
+                        newMatrix[row, column] = m[row, s] * n[s, column];
+                    }
+                }
+                return newMatrix;
+            }
+            return null;
+        }
+        //matrixaddition
+        double[,] AddMatrix(double[,] m, double[,] n)
+        {
+            double[,] newMatrix = new double[m.GetUpperBound(0), m.GetUpperBound(1)];
+            if (IsQuadratical(m) == true && IsQuadratical(n) == true)
+            {
+                for (int row = 0; row < newMatrix.GetLength(0); row++)
+                {
+                    for (int column = 0; column < newMatrix.GetLength(1); column++)
+                    {
+                        newMatrix[row, column] = m[row, column] = n[row, column];
+                    }
+                }
+                return newMatrix;
+            }
+            return null;
+        }
+
+        string GenerateNumeral(double number)
+        {
+
         }
     }
 }
